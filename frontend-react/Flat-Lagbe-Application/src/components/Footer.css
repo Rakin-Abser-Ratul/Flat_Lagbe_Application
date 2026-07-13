@@ -1,0 +1,24 @@
+/* Footer container styling */
+.footer_class {
+    background-color:  #F4F6F8; /* Premium warm alabaster (or use #0F172A if you went dark mode) */
+    padding: 2.5rem 1.5rem;   /* Generous padding for a luxury, breathable feel */
+    margin-top: auto;          /* Helps keep it at the bottom in flex layouts */
+}
+
+/* Customizing the divider line to look elegant rather than harsh */
+.footer_class hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08); /* Soft, subtle line instead of solid dark */
+    max-width: 80%;                        /* Doesn't stretch all the way to the edges */
+    margin: 0 auto 1.5rem auto;            /* Centers the line and adds space below it */
+}
+
+/* Footer copyright text */
+.footer_class p {
+    color: #64748B;            /* Muted slate grey text color */
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;     /* Slight tracking for premium typography */
+    margin: 0;
+}

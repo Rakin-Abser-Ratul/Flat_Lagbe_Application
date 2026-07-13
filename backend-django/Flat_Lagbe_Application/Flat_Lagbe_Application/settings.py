@@ -38,9 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'accounts',
+    'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # <-- FIX: Changed from django.middleware.CorsMiddleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -69,17 +74,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Flat_Lagbe_Application.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': {  # <--- Must be lowercase 'default'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'flat_lagbe_db',
+        'USER': 'postgres',
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -116,3 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+CORS_ALLOWED_ORIGINS = [
+    " http://localhost:5173",
+]
+ 

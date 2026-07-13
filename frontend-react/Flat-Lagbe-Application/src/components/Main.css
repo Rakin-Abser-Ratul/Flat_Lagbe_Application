@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Main Content Layout Component Styling
+   ========================================================================== */
+
+.main-content {
+    /* The core engine pushing the footer down: */
+    flex: 1; 
+    
+    /* Layout and Spacing */
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;        /* Centers your content column horizontally on big monitors */
+    width: 100%;
+    
+    /* Typography */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Premium Typography Rules for Headlines */
+.main-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1A1A1A;        /* Premium Deep Charcoal (or use #F8FAFC if you are on dark mode) */
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.5px;
+}
+
+/* Premium Typography Rules for Paragraphs/Descriptions */
+.main-content p {
+    font-size: 1.15rem;
+    color: #64748B;        /* Soft Slate Gray text */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}

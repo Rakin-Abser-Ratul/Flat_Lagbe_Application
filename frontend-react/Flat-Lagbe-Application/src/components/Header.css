@@ -1,0 +1,53 @@
+/* Container layout remains fully flexible */
+.custom-navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 1rem 2rem;
+    background-color: #0B1B3D;     
+}
+
+.navbar-brand-custom {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-buttons-custom {
+    display: flex;
+    gap: 15px;                      
+}
+
+/* Updated Button Base Styling */
+.btn-login, .btn-register {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;                 /* Changes cursor to hand pointer on hover */
+    transition: all 0.2s ease;
+}
+
+/* Login Button Profile */
+.btn-login {
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+
+.btn-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Registration Button Profile */
+.btn-register {
+    color: #2c3e50;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;       /* Keeps button heights uniform */
+}
+
+.btn-register:hover {
+    background-color: #f0f3f4;
+    border-color: #f0f3f4;
+}
