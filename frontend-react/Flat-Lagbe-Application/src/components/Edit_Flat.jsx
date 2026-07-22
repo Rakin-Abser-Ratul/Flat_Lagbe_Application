@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../AuthProvider'
 import axios from 'axios'
-import './Add_FlatPost.css'
+
 
 const Edit_Flat = () => {
   const { id } = useParams()
