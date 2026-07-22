@@ -2,7 +2,7 @@ import React, { useState, useContext, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../AuthProvider'
 import axios from 'axios'
-import './Add_FlatPost.css'
+//import './Add_FlatPost.css'
 
 const Add_FlatPost = () => {
   const navigate = useNavigate()
