@@ -21,7 +21,7 @@ const Main = () => {
                 const token = localStorage.getItem('access_token');
                 const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
 
-                const response = await axios.get('http://127.0.0.1:8000/api/flat-posts/', { headers });
+                const response = await axios.get('https://flat-lagbe-application.onrender.com/api/flat-posts/', { headers });
                 const data = Array.isArray(response.data) ? response.data : (response.data.results || []);
                 setFlats(data);
                 setLoading(false);
@@ -55,9 +55,9 @@ const Main = () => {
 
         if (typeof imgStr === 'string' && imgStr.trim() !== '') {
             if (imgStr.startsWith('http://') || imgStr.startsWith('https://')) return imgStr;
-            return `http://127.0.0.1:8000${imgStr.startsWith('/') ? '' : '/'}${imgStr}`;
+            return `https://flat-lagbe-application.onrender.com${imgStr.startsWith('/') ? '' : '/'}${imgStr}`;
         }
-        if (flatId) return `http://127.0.0.1:8000/api/flat-posts/${flatId}/image/`;
+        if (flatId) return `https://flat-lagbe-application.onrender.com/api/flat-posts/${flatId}/image/`;
         return 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80';
     };
 

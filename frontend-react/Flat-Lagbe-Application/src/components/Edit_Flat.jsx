@@ -39,7 +39,7 @@ const Edit_Flat = () => {
         const token = localStorage.getItem('access_token')
         const headers = token ? { 'Authorization': `Bearer ${token}` } : {}
 
-        const response = await axios.get(`http://127.0.0.1:8000/api/flat-posts/${id}/`, { headers })
+        const response = await axios.get(`https://flat-lagbe-application.onrender.com/api/flat-posts/${id}/`, { headers })
         const data = response.data
 
         let formattedMonth = ''
@@ -165,7 +165,7 @@ const Edit_Flat = () => {
 
     try {
       await axios.put(
-        `http://127.0.0.1:8000/api/flat-posts/${id}/`,
+        `https://flat-lagbe-application.onrender.com/api/flat-posts/${id}/`,
         dataPayload,
         {
           headers: {

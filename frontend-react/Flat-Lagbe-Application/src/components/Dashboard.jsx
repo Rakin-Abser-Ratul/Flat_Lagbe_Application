@@ -22,7 +22,7 @@ const Dashboard = () => {
 
             try {
                 // Fetch profile data from Django
-                const response = await axios.get('http://127.0.0.1:8000/api/me/', {
+                const response = await axios.get('https://flat-lagbe-application.onrender.com/api/me/', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

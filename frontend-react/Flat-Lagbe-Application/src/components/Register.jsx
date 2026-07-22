@@ -33,7 +33,7 @@ const Register = () => {
     setLoading(true) // Start loading state
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/register/', formData)
+      const response = await axios.post('https://flat-lagbe-application.onrender.com/api/register/', formData)
       
       setMessage('Registration successful! Redirecting to login page...')
       setFormData({ username: '', email: '', password: '' })

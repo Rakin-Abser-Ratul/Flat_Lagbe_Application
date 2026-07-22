@@ -21,7 +21,7 @@ const Listing = ({ currentUserId }) => {
                 const token = localStorage.getItem('access_token');
                 const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
                 
-                const response = await axios.get('http://127.0.0.1:8000/api/flat-posts/', { headers });
+                const response = await axios.get('https://flat-lagbe-application.onrender.com/api/flat-posts/', { headers });
                 const data = Array.isArray(response.data) ? response.data : (response.data.results || []);
                 setFlats(data);
                 setLoading(false);
@@ -55,9 +55,9 @@ const Listing = ({ currentUserId }) => {
 
         if (typeof imgStr === 'string' && imgStr.trim() !== '') {
             if (imgStr.startsWith('http://') || imgStr.startsWith('https://')) return imgStr;
-            return `http://127.0.0.1:8000${imgStr.startsWith('/') ? '' : '/'}${imgStr}`;
+            return `https://flat-lagbe-application.onrender.com${imgStr.startsWith('/') ? '' : '/'}${imgStr}`;
         }
-        if (flatId) return `http://127.0.0.1:8000/api/flat-posts/${flatId}/image/`;
+        if (flatId) return `https://flat-lagbe-application.onrender.com/api/flat-posts/${flatId}/image/`;
         return 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80';
     };
 
@@ -85,7 +85,7 @@ const Listing = ({ currentUserId }) => {
         try {
             const token = localStorage.getItem('access_token');
             const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
-            await axios.delete(`http://127.0.0.1:8000/api/flat-posts/${id}/`, { headers });
+            await axios.delete(`https://flat-lagbe-application.onrender.com/api/flat-posts/${id}/`, { headers });
             setFlats(prev => prev.filter(flat => (flat.id || flat.pk || flat._id) !== id));
         } catch (err) {
             console.error("Failed to delete listing:", err);

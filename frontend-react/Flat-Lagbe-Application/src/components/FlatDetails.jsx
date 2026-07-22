@@ -23,12 +23,12 @@ const FlatDetails = () => {
                 const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
                 // Fetch Flat Details
-                const detailsResponse = await axios.get(`http://127.0.0.1:8000/api/flat-posts/${id}/`, { headers });
+                const detailsResponse = await axios.get(`https://flat-lagbe-application.onrender.com/api/flat-posts/${id}/`, { headers });
                 setFlat(detailsResponse.data);
 
                 // Fetch Secure Image Asset
                 try {
-                    const imgResponse = await axios.get(`http://127.0.0.1:8000/api/flat-posts/${id}/image/`, {
+                    const imgResponse = await axios.get(`https://flat-lagbe-application.onrender.com/api/flat-posts/${id}/image/`, {
                         headers,
                         responseType: 'blob'
                     });

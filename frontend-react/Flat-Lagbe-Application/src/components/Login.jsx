@@ -33,7 +33,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/token/', payload)
+      const response = await axios.post('https://flat-lagbe-application.onrender.com/api/token/', payload)
 
       setMessage('Login successful! Redirecting...')
 

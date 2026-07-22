@@ -112,7 +112,7 @@ const Add_FlatPost = () => {
 
     try {
       await axios.post(
-        'http://127.0.0.1:8000/api/flat-posts/',
+        'https://flat-lagbe-application.onrender.com/api/flat-posts/',
         dataPayload,
         {
           headers: {
