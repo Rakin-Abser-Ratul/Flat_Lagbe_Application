@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+import cloudinary
+import cloudinary
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,9 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'cloudinary',
     'accounts',
     'rest_framework',
     'api',
+    'rest_framework_simplejwt',
+    
 ]
 
 MIDDLEWARE = [
@@ -80,15 +86,15 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import os
+import dj_database_url
+
 DATABASES = {
-    'default': {  # <--- Must be lowercase 'default'
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'flat_lagbe_db',
-        'USER': 'postgres',
-        'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://neondb_owner:npg_E9S2WMjifouz@ep-long-frog-aydsas8r.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require',
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 # Password validation
@@ -130,4 +136,38 @@ STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
     " http://localhost:5173",
 ]
- 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+import os
+from dotenv import load_dotenv
+
+# 1. THIS MUST RUN FIRST
+load_dotenv()  
+
+# ... other settings ...
+
+import cloudinary
+
+# 2. THIS RUNS AFTER
+cloudinary.config(
+    cloud_name = os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key = os.getenv("CLOUDINARY_API_KEY"),
+    api_secret = os.getenv("CLOUDINARY_API_SECRET"),
+    secure = True
+)
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    # Extend access token lifetime to 1 day for development comfort
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}

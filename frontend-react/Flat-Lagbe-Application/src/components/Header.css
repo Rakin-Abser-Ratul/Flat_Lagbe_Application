@@ -1,53 +1,120 @@
-/* Container layout remains fully flexible */
+/* Sticky Header Outer Wrapper */
+.header-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 188, 212, 0.15);
+}
+
+/* Navbar Base Bar */
 .custom-navbar {
     display: flex;
     justify-content: space-between; 
     align-items: center;            
-    padding: 1rem 2rem;
-    background-color: #0B1B3D;     
+    padding: 0.85rem 2.5rem;
+    background: linear-gradient(135deg, #00bcd4 0%, #00acc1 100%); 
+    backdrop-filter: blur(8px);
 }
 
+/* Brand Logo Styling */
 .navbar-brand-custom {
     color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.45rem;
+    font-weight: 800;
     text-decoration: none;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s ease;
 }
 
+.navbar-brand-custom:hover {
+    opacity: 0.92;
+}
+
+.brand-accent {
+    font-weight: 900;
+    margin-right: 4px;
+}
+
+/* Button Group Container */
 .navbar-buttons-custom {
     display: flex;
-    gap: 15px;                      
+    align-items: center;
+    gap: 12px;                    
 }
 
-/* Updated Button Base Styling */
-.btn-login, .btn-register {
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;                 /* Changes cursor to hand pointer on hover */
-    transition: all 0.2s ease;
+/* Shared Nav Button Base */
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
 }
 
-/* Login Button Profile */
-.btn-login {
+.nav-btn:active {
+    transform: translateY(1px);
+}
+
+/* Glass/Ghost Variant (Login, Dashboard) */
+.btn-login,
+.btn-dashboard {
     color: #ffffff;
-    background: transparent;
-    border: 1px solid #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.btn-login:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.btn-login:hover,
+.btn-dashboard:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
 }
 
-/* Registration Button Profile */
-.btn-register {
-    color: #2c3e50;
+/* Solid White Pop Variant (Register, Add Post) */
+.btn-register,
+.btn-add-post {
+    color: #00838f;
     background-color: #ffffff;
-    border: 1px solid #ffffff;       /* Keeps button heights uniform */
+    border: 1px solid #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
-.btn-register:hover {
-    background-color: #f0f3f4;
-    border-color: #f0f3f4;
+.btn-register:hover,
+.btn-add-post:hover {
+    background-color: #f8fafc;
+    border-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Add Icon Accent */
+.btn-icon {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 5px;
+    line-height: 1;
+}
+
+/* Responsive Scaling for Small Devices */
+@media (max-width: 576px) {
+    .custom-navbar {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .navbar-brand-custom {
+        font-size: 1.25rem;
+    }
+
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.82rem;
+    }
 }

@@ -1,5 +1,5 @@
 /* Isolated Outer Page Container */
-.register-page-container {
+.login-page-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
 }
 
 /* Bright White Elevated Card */
-.register-page-container .register-card {
+.login-page-container .login-card {
     background: #ffffff;
     width: 100%;
     max-width: 420px;
@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 
-.register-page-container .register-title {
+.login-page-container .login-title {
     margin: 0;
     color: #0f172a;
     font-size: 26px;
@@ -31,7 +31,7 @@
     letter-spacing: -0.4px;
 }
 
-.register-page-container .register-subtitle {
+.login-page-container .login-subtitle {
     margin: 6px 0 26px 0;
     color: #64748b;
     font-size: 13px;
@@ -39,13 +39,13 @@
 }
 
 /* Form Groups & Labels */
-.register-page-container .register-form-group {
+.login-page-container .login-form-group {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.register-page-container .register-form-group label {
+.login-page-container .login-form-group label {
     margin-bottom: 7px;
     color: #334155;
     font-size: 13px;
@@ -53,7 +53,7 @@
 }
 
 /* Input Fields */
-.register-page-container .register-control {
+.login-page-container .login-control {
     width: 100%;
     padding: 10px 14px;
     font-size: 14px;
@@ -66,22 +66,22 @@
     outline: none;
 }
 
-.register-page-container .register-control:focus {
+.login-page-container .login-control:focus {
     border-color: #00bcd4;
     box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.18);
 }
 
 /* Field Validation Errors */
-.register-page-container .register-control.is-invalid {
+.login-page-container .login-control.is-invalid {
     border-color: #ef4444;
     background-color: #fef2f2;
 }
 
-.register-page-container .register-control.is-invalid:focus {
+.login-page-container .login-control.is-invalid:focus {
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
-.register-page-container .register-field-error {
+.login-page-container .login-field-error {
     color: #dc2626;
     font-size: 12px;
     margin-top: 5px;
@@ -89,7 +89,7 @@
 }
 
 /* Alerts */
-.register-page-container .register-alert {
+.login-page-container .login-alert {
     padding: 10px 14px;
     border-radius: 6px;
     margin-bottom: 20px;
@@ -98,20 +98,20 @@
     text-align: center;
 }
 
-.register-page-container .register-alert-success {
+.login-page-container .login-alert-success {
     background-color: #f0fdf4;
     color: #166534;
     border: 1px solid #bbf7d0;
 }
 
-.register-page-container .register-alert-danger {
+.login-page-container .login-alert-danger {
     background-color: #fef2f2;
     color: #991b1b;
     border: 1px solid #fecaca;
 }
 
 /* Submit Action Button */
-.register-page-container .register-btn-submit {
+.login-page-container .login-btn-submit {
     width: 100%;
     padding: 11px;
     font-size: 14px;
@@ -126,18 +126,18 @@
     box-shadow: 0 2px 6px rgba(0, 188, 212, 0.25);
 }
 
-.register-page-container .register-btn-submit:hover {
+.login-page-container .login-btn-submit:hover {
     opacity: 0.94;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 188, 212, 0.35);
 }
 
-.register-page-container .register-btn-submit:active {
+.login-page-container .login-btn-submit:active {
     transform: translateY(0);
 }
 
 /* Footer Link Redirect */
-.register-page-container .register-auth-redirect {
+.login-page-container .login-auth-redirect {
     margin-top: 22px;
     margin-bottom: 0;
     font-size: 13px;
@@ -145,14 +145,18 @@
     text-align: center;
 }
 
-.register-page-container .register-auth-redirect a {
+.login-page-container .login-auth-redirect a {
     color: #00acc1;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.15s ease;
 }
 
-.register-page-container .register-auth-redirect a:hover {
+.login-page-container .login-auth-redirect a:hover {
     color: #00838f;
     text-decoration: underline;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
