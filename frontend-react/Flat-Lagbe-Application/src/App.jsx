@@ -12,7 +12,7 @@ import AuthProvider from './AuthProvider'
 import Dashboard from './components/Dashboard'
 import Add_FlatPost from './components/Add_FlatPost'
 import FlatDetails from './components/FlatDetails'
-import Listing from './components/listing'
+import Listing from './components/Listing'
 import Edit_Flat from './components/Edit_Flat'
 import ProtectedRoute from './components/ProtectedRoute'
 
